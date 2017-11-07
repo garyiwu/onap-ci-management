@@ -12,7 +12,7 @@
           path: '.'
           pattern: '**'
     mvn-settings: 'vvp-test-engine-settings'
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'
     jobs:
       - '{project-name}-{stream}-{subproject}-verify-python'
       - '{project-name}-{stream}-docker-java-daily'

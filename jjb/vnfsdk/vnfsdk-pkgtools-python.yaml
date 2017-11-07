@@ -12,6 +12,6 @@
       - 'master':
           branch: 'master'
     mvn-settings: 'vnfsdk-pkgtools-settings'
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'
     jobs:
       - '{project-name}-{stream}-{subproject}-verify-python'

@@ -533,7 +533,7 @@
     #
     # Required Variables:
     #   branch:         git branch
-    #   build-node:     what build node to run on
+    #   build-node: 'master'
     #   script:         build script to execute
 
     name: '{project-name}-{stream}-verify-script'
@@ -595,7 +595,7 @@
     #
     # Required Variables:
     #   branch:         git branch
-    #   build-node:     what build node to run on
+    #   build-node: 'master'
     #   script:         build script to execute
     #   extra-project:  extra gerrit project to checkout
     #   extra-refspec:  refspec for the extra project
@@ -670,7 +670,7 @@
     #
     # Required Variables:
     #   branch:         git branch
-    #   build-node:     what build node to run on
+    #   build-node: 'master'
     #   script:         build script to execute
     #   extra-project1:  extra gerrit project to checkout
     #   extra-refspec1:  refspec for the extra project
@@ -756,7 +756,7 @@
     #
     # Required Variables:
     #   branch:         git branch
-    #   build-node:     what build node to run on
+    #   build-node: 'master'
     #   script:         build script to execute
 
     name: '{project-name}-{stream}-two-scm-merge-docker-script'
@@ -824,7 +824,7 @@
     #
     # Required Variables:
     #   branch:         git branch
-    #   build-node:     what build node to run on
+    #   build-node: 'master'
     #   script:         build script to execute
 
     name: '{project-name}-{stream}-two-scm-release-docker-script-manual'

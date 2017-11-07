@@ -14,7 +14,7 @@
       - '{project-name}-{stream}-stage-site-java':
           site-pom: 'pom.xml'
           trigger-job: '{project-name}-{stream}-release-version-java-daily'
-          build-node: 'ubuntu1604-basebuild-8c-8g'
+          build-node: 'master'
 
     project: 'vid'
     stream:
@@ -23,4 +23,4 @@
     mvn-settings: 'vid-settings'
     files: '**'
     archive-artifacts: ''
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'

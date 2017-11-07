@@ -22,4 +22,4 @@
     mvn-settings: 'aai-resources-settings'
     files: '**'
     archive-artifacts: ''
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'

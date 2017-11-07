@@ -15,7 +15,7 @@
     maven-deploy-properties: |
       deployAtEnd=true
     archive-artifacts: ''
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'
 
     jobs:
       - '{project-name}-{stream}-release-version-java-daily'

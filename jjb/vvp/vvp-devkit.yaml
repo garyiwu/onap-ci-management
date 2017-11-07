@@ -12,7 +12,7 @@
           path: '.'
           pattern: '**'
     mvn-settings: 'vvp-devkit-settings'
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'
     jobs:
       - '{project-name}-{stream}-{subproject}-verify-python'
     docker-pom: 'pom.xml'

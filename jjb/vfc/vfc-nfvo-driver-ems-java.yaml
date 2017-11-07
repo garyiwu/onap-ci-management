@@ -23,4 +23,4 @@
             !include-raw-escape: 'build-driver-ems-docker-image.sh'
     files: '**'
     archive-artifacts: ''
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'

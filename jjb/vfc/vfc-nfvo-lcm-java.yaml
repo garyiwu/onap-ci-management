@@ -19,4 +19,4 @@
             !include-raw-escape: 'build-nfvo-lcm-docker-image.sh'
     files: '**'
     archive-artifacts: ''
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'

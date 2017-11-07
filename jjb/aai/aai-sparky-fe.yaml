@@ -2,7 +2,7 @@
 - project:
     name: sparky-fe
     project-name: 'aai-sparky-fe'
-    build-node: 'centos7-basebuild-4c-4g'
+    build-node: 'master'
     jobs:
       - gerrit-maven-clm:
           java-version: ''

@@ -6,22 +6,22 @@
     jobs:
       - '{project-name}-{stream}-verify-profile-java':
           mvn-profile: 'with-integration-tests'
-          build-node: 'ubuntu1604-docker-8c-8g'
+          build-node: 'master'
           archive-artifacts: 'packages/arquillian-unit-tests/target/**/*'
       - '{project-name}-{stream}-merge-profile-java':
           mvn-profile: 'with-integration-tests'
-          build-node: 'ubuntu1604-docker-8c-8g'
+          build-node: 'master'
           archive-artifacts: 'packages/arquillian-unit-tests/target/**/*'
       - '{project-name}-{stream}-release-version-profile-java-daily':
           mvn-profile: 'with-integration-tests'
-          build-node: 'ubuntu1604-docker-8c-8g'
+          build-node: 'master'
       - '{project-name}-{stream}-docker-version-java-daily':
           docker-pom: 'pom.xml'
           mvn-profile: 'docker'
       - '{project-name}-{stream}-stage-site-java':
           site-pom: 'pom.xml'
           trigger-job: '{project-name}-{stream}-release-version-java-daily'
-          build-node: 'ubuntu1604-basebuild-8c-8g'
+          build-node: 'master'
 
     project: 'so'
     stream:
@@ -30,4 +30,4 @@
     mvn-settings: 'so-settings'
     files: '**'
     archive-artifacts: ''
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'

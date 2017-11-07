@@ -7,7 +7,7 @@
    files: '**'
    archive-artifacts: ''
    build-timeout: 60
-   build-node: ubuntu1604-docker-8c-8g
+   build-node: 'master'
    submodule-recursive: true
 
    jobs:

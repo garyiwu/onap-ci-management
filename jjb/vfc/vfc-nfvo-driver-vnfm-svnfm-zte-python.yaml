@@ -8,7 +8,7 @@
       - 'master':
           branch: 'master'
     mvn-settings: 'vfc-nfvo-driver-vnfm-svnfm-settings'
-    build-node: ubuntu1604-basebuild-4c-4g
+    build-node: 'master'
     subproject:
       - 'drv-vnfm-zte':
           path: 'zte/vmanager'

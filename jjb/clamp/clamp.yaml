@@ -32,4 +32,4 @@
     mvn-settings: 'clamp-settings'
     files: '**'
     archive-artifacts: ''
-    build-node: ubuntu1604-docker-8c-8g
+    build-node: 'master'
