@@ -2,7 +2,7 @@
 - job-template:
     # Job template for Java verify jobs
     #
-    # The purpose of this job template is to run "maven clean install" for
+    # The purpose of this job template is to run "maven clean install -DskipTests=true" for
     # projects using this template.
     #
     # Required Variables:
@@ -52,7 +52,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean install -DskipTests=true -B
+          goals: 'clean install -DskipTests=true -DskipTests=true -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -68,7 +68,7 @@
 - job-template:
     # Job template for Java verify jobs
     #
-    # The purpose of this job template is to run "maven clean install" for
+    # The purpose of this job template is to run "maven clean install -DskipTests=true" for
     # projects using this template.
     #
     # Required Variables:
@@ -118,7 +118,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean install -B
+          goals: 'clean install -DskipTests=true -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -133,7 +133,7 @@
     # Job template for Java verify jobs running checkstyle at the end
     # When checkstyle will be fully incorporated, it is meant to replace
     #  '{project-name}-{stream}-verify-java-checkstyle'
-    # The purpose of this job template is to run "maven clean install" for
+    # The purpose of this job template is to run "maven clean install -DskipTests=true" for
     # projects using this template.
     #
     # Required Variables:
@@ -175,7 +175,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean install -B
+          goals: 'clean install -DskipTests=true -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -189,7 +189,7 @@
 - job-template:
     # Job template for Java verify jobs that takes a maven template
     #
-    # The purpose of this job template is to run "maven clean install -P {x}"
+    # The purpose of this job template is to run "maven clean install -DskipTests=true -P {x}"
     # for projects using this template.
     #
     # Required Variables:
@@ -239,7 +239,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean install -P {mvn-profile} -B
+          goals: 'clean install -DskipTests=true -P {mvn-profile} -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -253,7 +253,7 @@
 - job-template:
     # Job template for Java verify jobs with POM not at the root
     #
-    # The purpose of this job template is to run "maven clean install" for
+    # The purpose of this job template is to run "maven clean install -DskipTests=true" for
     # projects using this template.
     #
     # Required Variables:
@@ -307,7 +307,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean install -B
+          goals: 'clean install -DskipTests=true -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -371,7 +371,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -439,7 +439,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -519,7 +519,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties: '{obj:mvn_properties}'
           settings: '{mvn-settings}'
@@ -598,7 +598,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -681,7 +681,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -761,7 +761,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -841,7 +841,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -P {mvn-profile} -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -P {mvn-profile} -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -912,7 +912,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -999,7 +999,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -1069,7 +1069,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           properties:
             - '{maven-deploy-properties}'
@@ -1087,7 +1087,7 @@
 - job-template:
     # Job template for Java merge jobs
     #
-    # The purpose of this job template is to run "maven clean deploy -DskipStaging=true" for
+    # The purpose of this job template is to run "maven clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true" for
     # projects using this template.
     #
     # Required Variables:
@@ -1135,7 +1135,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -1149,7 +1149,7 @@
 - job-template:
     # Job template for Java merge jobs based on
     #   '{project-name}-{stream}-merge-java'
-    # The purpose of this job template is to run "maven clean deploy -DskipStaging=true" for
+    # The purpose of this job template is to run "maven clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true" for
     # projects using this template.
     #
     # Required Variables:
@@ -1198,7 +1198,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -1213,7 +1213,7 @@
 - job-template:
     # Job template for Java merge jobs that takes a maven template
     #
-    # The purpose of this job template is to run "maven clean deploy -DskipStaging=true -P {x}"
+    # The purpose of this job template is to run "maven clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -P {x}"
     # for projects using this template.
     #
     # Required Variables:
@@ -1264,7 +1264,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -P {mvn-profile} -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -P {mvn-profile} -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -1333,7 +1333,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -1347,7 +1347,7 @@
 - job-template:
     # Job template for Java merge jobs with POM not at the root
     #
-    # The purpose of this job template is to run "maven clean deploy -DskipStaging=true" for
+    # The purpose of this job template is to run "maven clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true" for
     # projects using this template.
     #
     # Required Variables:
@@ -1400,7 +1400,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -DskipStaging=true -B
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -1471,7 +1471,7 @@
     #
     # The purpose of this job template is to run :
     #  1. login to the docker registry
-    #  2. do a clean deploy -DskipStaging=true on the specified profile
+    #  2. do a clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true on the specified profile
     #
     # Required Variables:
     #     pom:       name/location of the pom.xml file relative to the workspace
@@ -1946,7 +1946,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: 'pom.xml'
-          goals: 'clean install -DskipTests -B
+          goals: 'clean install -DskipTests=true -DskipTests -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -2026,7 +2026,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: 'pom.xml'
-          goals: 'clean install -DskipTests -B
+          goals: 'clean install -DskipTests=true -DskipTests -B
             '
           settings: '{mvn-settings}'
           settings-type: cfp
@@ -2061,7 +2061,7 @@
     #   - change version in all POM files to the release version specified
     #     in version.properties. This is done using a script instread of
     #     the mvn version plugin that assumes some specific parent structure.
-    #   - runs maven clean deploy -DskipStaging=true sonar
+    #   - runs maven clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true sonar
     #
     # The POM files are required to use the Maven staging plugin so the deploy
     # does not deploy directly to the release repo.
@@ -2120,7 +2120,7 @@
       - maven-target:
           private-repository: true
           maven-version: '{maven-version}'
-          goals: 'clean deploy -DskipStaging=true site:site site:stage-deploy
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true site:site site:stage-deploy
             -B
             '
           properties:
@@ -2141,7 +2141,7 @@
     #   - change version in all POM files to the release version specified
     #     in version.properties. This is done using a script instread of
     #     the mvn version plugin that assumes some specific parent structure.
-    #   - runs maven clean deploy -DskipStaging=true sonar
+    #   - runs maven clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true sonar
     #
     # The POM files are required to use the Maven staging plugin so the deploy
     # does not deploy directly to the release repo.
@@ -2206,7 +2206,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -DskipStaging=true site:site site:stage-deploy
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true site:site site:stage-deploy
             -B
             '
           properties:
@@ -2228,7 +2228,7 @@
     #     in version.properties. This is done using a script instread of
     #     the mvn version plugin that assumes some specific parent structure
     #     This version does NOT change the version within the <parent> tag.
-    #   - runs maven clean deploy -DskipStaging=true sonar
+    #   - runs maven clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true sonar
     #
     # The POM files are required to use the Maven staging plugin so the deploy
     # does not deploy directly to the release repo.
@@ -2293,7 +2293,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -DskipStaging=true site:site site:stage-deploy
+          goals: 'clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true site:site site:stage-deploy
             -B
             '
           properties:
@@ -2388,7 +2388,7 @@
 - job-template:
     # Job template for Java merge jobs
     #
-    # The purpose of this job template is to run "maven clean deploy -DskipStaging=true" for
+    # The purpose of this job template is to run "maven clean deploy -DskipTests=true -Donap.nexus.url=http://localhost:8081/nexus -DskipStaging=true" for
     # projects using this template.
     #
     # Required Variables:
@@ -2495,7 +2495,7 @@
           private-repository: true
           maven-version: '{maven-version}'
           pom: 'pom.xml'
-          goals: 'clean install -DskipTests -B '
+          goals: 'clean install -DskipTests=true -DskipTests -B '
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
