@@ -48,6 +48,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean install -DskipTests=true -B
@@ -112,6 +113,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean install -B
@@ -167,6 +169,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean install -B
@@ -229,6 +232,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean install -P {mvn-profile} -B
@@ -294,6 +298,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -357,6 +362,7 @@
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar -Dsonar.host.url=${{SONAR}} -B
@@ -423,6 +429,7 @@
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
@@ -490,6 +497,7 @@
           steps:
             - inject:
                 properties-file: version.properties
+            - shell: !include-raw-escape: include-replace-nexus.sh
             - maven-target:
                 maven-version: '{maven-version}'
                 goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -499,6 +507,7 @@
                 settings-type: cfp
                 global-settings: 'global-settings'
                 global-settings-type: cfp
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar -Dsonar.host.url=${{SONAR}} -B
@@ -564,6 +573,7 @@
 
       - inject:
           properties-file: version.properties
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -574,6 +584,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
@@ -641,6 +652,7 @@
 
       - inject:
           properties-file: version.properties
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -652,6 +664,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -719,6 +732,7 @@
 
       - inject:
           properties-file: version.properties
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -729,6 +743,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar -Dsonar.host.url=${{SONAR}} -B
@@ -795,6 +810,7 @@
 
       - inject:
           properties-file: version.properties
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -805,6 +821,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar -P {mvn-profile} -Dsonar.host.url=${{SONAR}} -B
@@ -873,6 +890,7 @@
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -945,6 +963,7 @@
 
       - inject:
           properties-file: version.properties
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -956,6 +975,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -1024,6 +1044,7 @@
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -1089,6 +1110,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
@@ -1150,6 +1172,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
@@ -1214,6 +1237,7 @@
 
       - docker-login
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy -P {mvn-profile} -B
@@ -1281,6 +1305,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
@@ -1345,6 +1370,7 @@
       - provide-maven-settings:
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -1465,6 +1491,7 @@
           steps:
             - inject:
                 properties-file: version.properties
+            - shell: !include-raw-escape: include-replace-nexus.sh
             - maven-target:
                 maven-version: '{maven-version}'
                 goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -1530,6 +1557,7 @@
 
       - docker-login
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: '{mvn-goals}'
@@ -1589,6 +1617,7 @@
       - inject:
           properties-file: version.properties
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -1601,6 +1630,7 @@
 
       - docker-login
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: '{mvn-goals}'
@@ -1660,6 +1690,7 @@
       - inject:
           properties-file: version.properties
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -1673,6 +1704,7 @@
 
       - docker-login
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -1733,6 +1765,7 @@
       - inject:
           properties-file: version.properties
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -1801,6 +1834,7 @@
       - inject:
           properties-file: version.properties
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -1873,6 +1907,7 @@
 
       - docker-login
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: 'pom.xml'
@@ -1883,6 +1918,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -1949,6 +1985,7 @@
 
       - docker-login
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: 'pom.xml'
@@ -1959,6 +1996,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -2040,6 +2078,7 @@
 
       - shell: !include-raw-escape: include-update-pom-versions.sh
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar site:site site:stage-deploy
@@ -2123,6 +2162,7 @@
 
       - shell: !include-raw-escape: include-update-pom-versions.sh
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -2208,6 +2248,7 @@
 
       - shell: !include-raw-escape: include-update-pom-versions-not-parent.sh
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -2275,6 +2316,7 @@
           settings-file: '{mvn-settings}'
       - inject:
           properties-file: version.properties
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -2286,6 +2328,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{site-pom}'
@@ -2404,6 +2447,7 @@
 
       - docker-login
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: 'pom.xml'
@@ -2413,6 +2457,7 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
 
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
