@@ -50,6 +50,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean install -DskipTests=true -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -115,6 +116,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean install -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -171,6 +173,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean install -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -234,6 +237,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean install -P {mvn-profile} -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -300,6 +304,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'clean install -B
@@ -364,6 +369,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar -Dsonar.host.url=${{SONAR}} -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -431,6 +437,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -499,6 +506,7 @@
                 properties-file: version.properties
             - shell: !include-raw-escape: include-replace-nexus.sh
             - maven-target:
+                private-repository: true
                 maven-version: '{maven-version}'
                 goals: 'versions:set versions:update-child-modules versions:commit -B'
                 properties:
@@ -509,6 +517,7 @@
                 global-settings-type: cfp
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar -Dsonar.host.url=${{SONAR}} -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -575,6 +584,7 @@
           properties-file: version.properties
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
           properties:
@@ -586,6 +596,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -654,6 +665,7 @@
           properties-file: version.properties
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -666,6 +678,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'clean deploy -B
@@ -734,6 +747,7 @@
           properties-file: version.properties
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
           properties:
@@ -745,6 +759,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar -Dsonar.host.url=${{SONAR}} -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -812,6 +827,7 @@
           properties-file: version.properties
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
           properties:
@@ -823,6 +839,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar -P {mvn-profile} -Dsonar.host.url=${{SONAR}} -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -892,6 +909,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'clean deploy sonar:sonar -Dsonar.host.url=${{SONAR}} -B
@@ -965,6 +983,7 @@
           properties-file: version.properties
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -977,6 +996,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'clean deploy sonar:sonar -Dsonar.host.url=${{SONAR}} -B
@@ -1046,6 +1066,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'clean deploy -B
@@ -1112,6 +1133,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -1174,6 +1196,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -1239,6 +1262,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy -P {mvn-profile} -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -1307,6 +1331,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy -B
             -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -1372,6 +1397,7 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'clean deploy -B
@@ -1493,6 +1519,7 @@
                 properties-file: version.properties
             - shell: !include-raw-escape: include-replace-nexus.sh
             - maven-target:
+                private-repository: true
                 maven-version: '{maven-version}'
                 goals: 'versions:set versions:update-child-modules versions:commit -B'
                 properties:
@@ -1559,6 +1586,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: '{mvn-goals}'
           settings: '{mvn-settings}'
@@ -1619,6 +1647,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
           properties:
@@ -1632,6 +1661,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: '{mvn-goals}'
           settings: '{mvn-settings}'
@@ -1692,6 +1722,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -1706,6 +1737,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: '{mvn-goals}'
@@ -1767,6 +1799,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
           properties:
@@ -1836,6 +1869,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -1909,6 +1943,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: 'pom.xml'
           goals: 'clean install -DskipTests -B
@@ -1920,6 +1955,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: '{mvn-goals}'
@@ -1987,6 +2023,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: 'pom.xml'
           goals: 'clean install -DskipTests -B
@@ -1998,6 +2035,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: '{mvn-goals}'
@@ -2080,6 +2118,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           goals: 'clean deploy sonar:sonar site:site site:stage-deploy
             -Dsonar.host.url=${{SONAR}} -B
@@ -2164,6 +2203,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'clean deploy sonar:sonar site:site site:stage-deploy
@@ -2250,6 +2290,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'clean deploy sonar:sonar site:site site:stage-deploy
@@ -2318,6 +2359,7 @@
           properties-file: version.properties
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: 'versions:set versions:update-child-modules versions:commit -B'
@@ -2330,6 +2372,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{site-pom}'
           goals: 'clean site:site site:stage-deploy -B'
@@ -2449,6 +2492,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: 'pom.xml'
           goals: 'clean install -DskipTests -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
@@ -2459,6 +2503,7 @@
 
       - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-target:
+          private-repository: true
           maven-version: '{maven-version}'
           pom: '{pom}'
           goals: '{mvn-goals}'
