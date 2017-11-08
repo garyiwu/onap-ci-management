@@ -17,7 +17,7 @@
 
     project-type: freestyle
     concurrent: true
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -80,7 +80,7 @@
     name: '{project-name}-{stream}-merge-scm-mvn-script'
 
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -146,7 +146,7 @@
 
     project-type: freestyle
     concurrent: true
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -225,7 +225,7 @@
 
     project-type: freestyle
     concurrent: true
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -306,7 +306,7 @@
 
     project-type: freestyle
     concurrent: true
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -383,7 +383,7 @@
 
     project-type: freestyle
     concurrent: true
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -461,7 +461,7 @@
     name: '{project-name}-{stream}-daily-release-2scm-mvn-script'
 
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -895,7 +895,7 @@
 
     project-type: freestyle
     concurrent: true
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     parameters:
       - string:

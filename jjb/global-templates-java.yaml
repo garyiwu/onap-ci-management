@@ -1414,7 +1414,7 @@
 - job-template:
     name: '{project-name}-{stream}-docker-java-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -1479,7 +1479,7 @@
     #     maven-properties: properties passed to maven
     name: '{project-name}-{stream}-docker-java-properties-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
     properties:
       - infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
@@ -1543,7 +1543,7 @@
 - job-template:
     name: '{project-name}-{stream}-docker-java-shell-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -1603,7 +1603,7 @@
 - job-template:
     name: '{project-name}-{stream}-docker-java-version-shell-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -1678,7 +1678,7 @@
 - job-template:
     name: '{project-name}-{stream}-{subproject}-docker-java-version-shell-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -1755,7 +1755,7 @@
 - job-template:
     name: '{project-name}-{stream}-docker-version-java-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -1825,7 +1825,7 @@
 - job-template:
     name: '{project-name}-{stream}-{subproject}-docker-version-java-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -1897,7 +1897,7 @@
 - job-template:
     name: '{project-name}-{stream}-aai-docker-java-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
     docker-image-name: ''
 
     properties:
@@ -1977,7 +1977,7 @@
 - job-template:
     name: '{project-name}-{stream}-{subproject}-aai-docker-java-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
     docker-image-name: ''
 
     properties:
@@ -2396,7 +2396,7 @@
     name: '{project-name}-{stream}-sdc-merge-java'
 
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
@@ -2449,7 +2449,7 @@
 - job-template:
     name: '{project-name}-{stream}-aai-docker-java-version-daily'
     project-type: freestyle
-    node: 'ubuntu1604-docker-8c-8g'
+    node: 'master'
 
     properties:
       - infra-properties:
