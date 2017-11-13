@@ -56,8 +56,8 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
           properties:
-            - docker.pull.registry=nexus3.onap.org:10001
-            - docker.push.registry=nexus3.onap.org:10003
+            - docker.pull.registry=localhost:10001
+            - docker.push.registry=localhost:10003
 
     publishers:
       - infra-shiplogs:
@@ -118,8 +118,8 @@
           global-settings: 'global-settings'
           global-settings-type: cfp
           properties:
-            - docker.pull.registry=nexus3.onap.org:10001
-            - docker.push.registry=nexus3.onap.org:10003
+            - docker.pull.registry=localhost:10001
+            - docker.push.registry=localhost:10003
 
     publishers:
       - infra-shiplogs:
