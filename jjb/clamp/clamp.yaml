@@ -22,7 +22,7 @@
          maven-properties: |
           skip.docker.build=false
           skip.docker.tag=false
-          skip.docker.push=false
+          skip.docker.push=true
           clamp.registry=$
 
     project: 'clamp'

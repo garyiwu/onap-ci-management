@@ -7,5 +7,5 @@ export REPO="localhost:10003"
 for tag in $tags
 do
   docker tag openecomp/testsuite:latest $REPO/openecomp/testsuite:$tag
-  docker push $REPO/openecomp/testsuite:$tag
+  echo docker push $REPO/openecomp/testsuite:$tag
 done

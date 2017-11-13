@@ -44,10 +44,10 @@ docker tag $REPO_PATH:latest $REPO_PATH:$SNAPSHOT_TAG;
 if [[ "$VERSION" =~ $RELEASE_VERSION_REGEX ]]; then
     STRIPPED_RELEASE=$(echo $VERSION | cut -d"." -f1,2);
     docker tag $REPO_PATH:latest $REPO_PATH:${STRIPPED_RELEASE}-STAGING-latest;
-    docker push $REPO_PATH:${STRIPPED_RELEASE}-STAGING-latest;
+    echo docker push $REPO_PATH:${STRIPPED_RELEASE}-STAGING-latest;
 else
-    docker push $REPO_PATH:latest;
+    echo docker push $REPO_PATH:latest;
 fi
 
-docker push $REPO_PATH:$SNAPSHOT_TAG;
-docker push $REPO_PATH:$STAGING_TAG;
+echo docker push $REPO_PATH:$SNAPSHOT_TAG;
+echo docker push $REPO_PATH:$STAGING_TAG;

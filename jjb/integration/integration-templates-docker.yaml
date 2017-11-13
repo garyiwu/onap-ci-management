@@ -50,7 +50,7 @@
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean package docker:build docker:push'
+          goals: 'clean package docker:build'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'

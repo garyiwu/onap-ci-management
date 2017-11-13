@@ -1454,7 +1454,7 @@
           settings-file: '{mvn-settings}'
 
       - docker-login
-
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-docker-push-daily:
           maven-version: '{maven-version}'
           mvn-settings: '{mvn-settings}'
@@ -1529,6 +1529,7 @@
                 global-settings: 'global-settings'
                 global-settings-type: cfp
       - docker-login
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-docker-push-daily:
           maven-version: '{maven-version}'
           mvn-settings: '{mvn-settings}'
@@ -1810,7 +1811,7 @@
           global-settings-type: cfp
 
       - docker-login
-
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-docker-push-daily:
           maven-version: '{maven-version}'
           mvn-settings: '{mvn-settings}'
@@ -1881,7 +1882,7 @@
           global-settings-type: cfp
 
       - docker-login
-
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-docker-push-daily:
           maven-version: '{maven-version}'
           pom: '{pom}'
@@ -2434,7 +2435,7 @@
           settings-file: '{mvn-settings}'
 
       - docker-login
-
+      - shell: !include-raw-escape: include-replace-nexus.sh
       - maven-docker-push-daily:
           maven-version: '{maven-version}'
           mvn-settings: '{mvn-settings}'

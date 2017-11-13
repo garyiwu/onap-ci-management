@@ -35,7 +35,7 @@
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -B -X -P {mvn-profile}'
+          goals: 'clean install -B -P {mvn-profile}'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -44,6 +44,7 @@
             - maven.test.skip=true
             - docker.pull.registry=localhost:10001
             - docker.push.registry=localhost:10002
+            - skip.docker.push=true
 
 - builder:
     name: maven-docker-push-daily
@@ -51,7 +52,7 @@
       - maven-target:
           maven-version: '{maven-version}'
           pom: '{pom}'
-          goals: 'clean deploy -B -X -P {mvn-profile}'
+          goals: 'clean install -B -P {mvn-profile}'
           settings: '{mvn-settings}'
           settings-type: cfp
           global-settings: 'global-settings'
@@ -60,6 +61,7 @@
             - maven.test.skip=true
             - docker.pull.registry=localhost:10001
             - docker.push.registry=localhost:10003
+            - skip.docker.push=true
 
 - builder:
     name: docker-login
